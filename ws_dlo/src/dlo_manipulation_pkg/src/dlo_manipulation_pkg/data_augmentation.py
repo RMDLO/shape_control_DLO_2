@@ -6,13 +6,13 @@ import rospy
 from scipy.spatial.transform import Rotation as sciR
 
 try:
-    from utils.state_index import I
+    from dlo_manipulation_pkg.state_index import I
 except:
-    from state_index import I
+    from dlo_manipulation_pkg.state_index import I
 
 
-env_dim = rospy.get_param("env/dimension")
-num_fps = rospy.get_param("DLO/num_FPs")
+env_dim = '3D'
+num_fps = 10
 
 
 # --------------------------------------------------------------------------------
@@ -252,9 +252,9 @@ if __name__ == '__main__':
 
     from my_plot import plot3dState
 
-    project_dir = rospy.get_param("project_dir")
-    env_dim = rospy.get_param("env/dimension")
-    num_fps = rospy.get_param("DLO/num_FPs")
+    project_dir = '/home/hollydinkel/shape_control_DLO_2/'
+    env_dim = '3D'
+    num_fps = 10
 
     states_world = np.load(project_dir + "data/train_data/"+ env_dim + "/state.npy").astype("float32")
 

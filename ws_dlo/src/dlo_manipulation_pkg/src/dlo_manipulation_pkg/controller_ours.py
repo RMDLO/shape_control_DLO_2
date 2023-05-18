@@ -13,8 +13,8 @@ from scipy.spatial.transform import Rotation as sciR
 
 import copy
 
-from RBF import JacobianPredictor
-from utils.state_index import I
+from dlo_manipulation_pkg.RBF import JacobianPredictor
+from dlo_manipulation_pkg.state_index import I
 
 
 
