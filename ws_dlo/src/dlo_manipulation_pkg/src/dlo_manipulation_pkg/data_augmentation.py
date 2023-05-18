@@ -4,15 +4,10 @@ import torch
 from torch._C import dtype
 import rospy
 from scipy.spatial.transform import Rotation as sciR
+from dlo_manipulation_pkg.state_index import I
 
-try:
-    from dlo_manipulation_pkg.state_index import I
-except:
-    from dlo_manipulation_pkg.state_index import I
-
-
-env_dim = '3D'
-num_fps = 10
+env_dim = rospy.get_param("env/dimension")
+num_fps = rospy.get_param("DLO/num_FPs")
 
 
 # --------------------------------------------------------------------------------
@@ -252,9 +247,9 @@ if __name__ == '__main__':
 
     from my_plot import plot3dState
 
-    project_dir = '/home/hollydinkel/shape_control_DLO_2/'
-    env_dim = '3D'
-    num_fps = 10
+    project_dir = rospy.get_param("project_dir")
+    env_dim = rospy.get_param("env/dimension")
+    num_fps = rospy.get_param("DLO/num_FPs")
 
     states_world = np.load(project_dir + "data/train_data/"+ env_dim + "/state.npy").astype("float32")
 

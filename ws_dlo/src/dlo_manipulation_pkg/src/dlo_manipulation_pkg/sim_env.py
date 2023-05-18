@@ -14,12 +14,12 @@ from mlagents_envs.side_channel.engine_configuration_channel import EngineConfig
 from mlagents_envs.side_channel.environment_parameters_channel import EnvironmentParametersChannel
 import gym
 from gym_unity.envs import UnityToGymWrapper
-from utils.state_index import I
+from dlo_manipulation_pkg.state_index import I
 from geometry_msgs.msg import Vector3
 
 control_method = rospy.get_param("controller/control_law")
 if control_method == 'ours':
-    from controller_ours import Controller
+    from dlo_manipulation_pkg.controller_ours import Controller
 
 
 
